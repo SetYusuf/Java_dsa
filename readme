@@ -437,3 +437,56 @@ what we using Linkedlist for
 1. implement Stack/ queues
 2.GPS navigation 
 3.Music Playlist; 
+
+
+                   IV. Dynamic Array 
+
+    also call in java = araraylist
+    C++ = vector
+    javascript = Array
+    python = list
+
+A dynamic array is an array that can automatically change its size while the program is running.
+
+so here an example of static array what is static array ?
+
+A static array is the simplest type of array in programming. 
+It has a fixed size, which means the number of elements it can hold is
+ decided when you create it and cannot change later.
+
+ example static array : 
+
+ given capacity : 5 , size : depend on value in array 
+ok at first u have 5 empty slot and 4 data_Value
+
+0     1    2     3     4
+_A__.__B_.__C__.__D___._____ ; so the size are 3
+
+0     1    2     3     4
+_A__.__B_.__C__.__D___.__E___ ; 
+
+so the max size are 5 and it capacity that it can hold only 5;
+
+remember we given capacity 5 ; see we can create it but
+we cant increas the capacity after so that why they create 
+Dynamic array will increasing size automatically while the program 
+running 
+
+
+ArrayList<Integer> list = new ArrayList<>(2); // initial capacity = 2
+
+list.add(1);
+list.add(2);
+list.add(3); // <-- here ArrayList increases capacity automatically
+
+#NOTE IMPORTTAND !!!!!!!!!!!!!!!!!!!!!!!!!!!
+Two files: DynamicArray.java and Main.java
+
+DynamicArray.java → contains the class DynamicArray.
+ This class has all the instructions for
+ how a dynamic array works (like adding, printing, resizing).
+
+Main.java → uses DynamicArray to do things in your program (like adding elements and printing them).
+
+
+    
