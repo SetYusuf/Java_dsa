@@ -1,0 +1,439 @@
+                                            data structure and algorithms
+what is a data structure?
+
+data structure : a name location that can be used to store and organize data
+
+example : array a collection of element stored a contiguous memory locations.
+
+char[] array;
+
+what is algorithm : is a collection of steps to solve a problem , 
+
+example : i baking a pizza
+
+1. heat the oven to 550 F
+2.Knead the dough
+3.Add Toping
+.......
+
+another example : linear search
+one by one, examine the elements of an array to find a value 
+                   it searching for a array value
+
+                             |                                 
+                             V
+
+{student1}, {student2} , {student3}.. 
+
+
+linear search is an example of searching algorithms
+
+     
+why should i learn DS & A
+
+1, you write code that is both time and memory and efficient 
+2. commonly asked questions involve DS&A in coding job interviews
+* can you revers a doubly linklist ?
+
+    note * code 
+
+        datastructure<datatype> datastructure = new datastructuretype<>()
+        ex. Queue<String> queue = new LinkedList<>() 
+            stack<string> stack = new stack <String>();
+
+             -----------------------------------------
+              
+
+                               I. Stack
+
+  // stack = lIEFO data structure. Last in first out
+        //         store objects into sort of "vertical tower"
+        //         push() to add to the top 
+        //         pop() to remove from the top
+
+
+stack have 5 uniqe method
+- push : added object example : stack.push("cs"); stack.push("valo);
+result : cs2, valo 
+- pop : deleted example stack.pop(); will alway remove the top of obeject
+result : cs2 * it remove valo cuz it on top 
+
+* we can use pop to pick and object from the stack but it 
+will remove from the stack
+code : example :
+String myFavGame = (stack.pop ()); it will remove the topest of
+the stack so that why we use peek to peek the object on top of the stack
+
+- peek : to peek the top object in the Stack
+code : system.out.println(stack.peek());   -- itt will give ur the topest of the stack
+       system.out.println(stack); to print the result of the stack 
+
+- check is the stack empty : code: System.out.println(stack.empty());
+-search for an item in stack
+code , System.out.println(stack.search("object u wanted to search"));
+
+like system.out.println(stack.search(cs2));
+
+Stack<String> stack = new Stack<String>();
+ * it count like this 
+stack.push("Cs2"); no.3 
+stack.push("valo"); no.2 
+stack.push("mine"); <- this is the top of the stack so
+                       that no.1
+
+                       // Use of stack ?
+        //1. undo //redo  feature in the text editor 
+        //2. moving back and forward throught browser history
+        //3. backtracking algorithms (maze, file directory, etc)
+        //4. calling functions (call stack)
+#conclusion  : lIEFO data structure. Last in first out
+        //         store objects into sort of "vertical tower"
+        //         push() to add to the top 
+        //         pop() to remove from the top
+
+push for add : code : stack.push("item1");
+pop for deleted stack.pop()
+peek for peek the top of the object system.out.println(stack.peek());
+check if the stack empty -- System.out.println(stack.empty());
+
+search for an object in the stack : code system.out.println(stack.seach("item1"))
+
+                      II, QUEUE
+it FIFO : first in first out first come first serves;
+
+enqueue (add) offer
+dequeue (remove) poll
+peek still like stack
+
+it follow the rule fifo 
+
+so when we we start queue
+
+Queue<String> queue = new LinkList<string>();
+
+queue.offer("item 1");
+queue.offer("item 2");
+queue.offer("item 3");
+--------------------
+
+output : [item 1, item 2, item 3 __________etc]
+
+put it like this : 
+  
+      item 1 <- first in no 1 head
+      item 2 <- second after no. 1 
+      item 3 <- thrid of the q also a tail
+      
+so when we dequeue by using poll :
+
+ queue.poll(); <- so the first object that it will delete are 
+ the head no11 because it the first one that are in ;
+
+ so after using poll the item will only left
+
+ item 2 <- this will be the head after no.1
+ item 3 <- still a tail cuz it the last one
+
+we using poll again :
+
+item 3 <- it will become a head and also a tail
+
+put it like u go buy a movie ticket u come first
+u get first afteru get ur ticket ur out the person 
+behind u will be next;
+
+Peek(); : we use peek in queue the same thing as stack
+it not the same but in queue we can use
+examine() same thing as Sytem.out.println(queue.peek());
+
+output : item 1 
+        [item 1, item 2, item 3];
+
+Check if the queue empty are not :
+
+code : System.out.println(queu.isEmpty());
+abit different from stack in stack : System.out.println(stack.empty());
+
+And we can also check the size of the queue by : 
+
+System.out.println(queue.size()); 
+
+it work the same with stack; 
+
+System.out.println(stack.size());
+
+to check if the object is in the queue are not we using contains ;
+System.out.println(queue.contains("item u want to search"));
+
+// Where are queues useful?
+
+1. Keybord Buffer (letters should appear on the screen in the order theyre pressed)
+2. printer Queue (Print jobs should be completed in the order)
+3. Used in LinkedList, PriorityQueues, Breadth-first search;
+
+in conclusion a queue is FIFO first-in first-out 
+
+                   II./ Priority Queue
+What the diiferent between the Priority Queue and Normal Queue?
+
+// NORMAL QUEUE
+// Queue = FIFO (First In First Out)
+//  - Elements are served in the order they are added
+//  - Example: People lining up at a cashier
+//  - Operations:
+//      enqueue (add to rear)
+//      dequeue (remove from front)
+//  - Peek = see the front element without removing
+//  - Use cases:
+//      - Printer queue
+//      - BFS in graphs
+//      - Task scheduling (simple order)
+
+
+// PRIORITY QUEUE
+// PriorityQueue = elements with HIGH priority served first
+//  - Not strictly FIFO, priority decides order
+//  - Example: Emergency room, critical patients treated first
+//  - Operations:
+//      add / offer (add element, automatically placed based on priority)
+//      poll / remove (removes highest priority element)
+//      peek (see element with highest priority without removing)
+//  - If two elements have same priority, served in order they were added
+//  - Use cases:
+//      - Task scheduling in OS
+//      - AI job queues
+//      - Real-time systems where some tasks are more important
+
+why the output of this code : 
+code : 
+
+
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class PriorityQ{
+    public static void main(String[] args)
+    {
+        Queue<String> queue = new PriorityQueue<>();
+        queue.offer("b");
+        queue.offer("c");
+        queue.offer("a");
+        queue.offer("d");
+
+        while(!queue.isEmpty()){
+            System.out.println(queue.peek());
+            System.out.println(queue);
+            System.out.println(queue.poll());
+            
+        }                      
+    }
+}
+output :
+a
+[a, c, b, d]
+a
+b
+[b, c, d]
+b
+c
+[c, d]
+c
+d
+[d]
+d
+
+why : a
+[a, c, b, d]
+
+ |
+ v
+
+Important rule:
+
+PriorityQueue does NOT store elements as a fully sorted list.
+It stores them as a HEAP.
+
+A heap only guarantees that the first element is the smallest, not that the whole list is sorted.
+
+So internally it may look like:
+
+        a
+       / \
+      c   b
+     /
+    d
+
+
+                            III. LinkedList
+1.single LinkedList
+
+A Linked List is a way to store data in memeory using nodes
+that are connected with pointer (links) instead of storing
+them next to each other like arry ,
+
+structure
+         | next is a node or pointer a reference to next node in list
+         |
+  | the value store
+  V      V
+[data | next ] -> [data | next ] -> [data | next ] -> null
+
+example 
+
+10 -> 20 -> 30 -> 40 -> null
+
+Node
+ ├── data
+ └── next (pointer to next node)
+   
+2.Doubly LinkedList
+
+A Doubly Linked List is an improved version of a linked list.
+still like LinkedList it have data and node but this time structure like this
+
+null <- [data | prev | next] <-> [data | prev | next] <-> [data | prev | next] -> null
+
+example:  10 <-> 20 <-> 30 <-> 40
+
+Node
+ ├── prev
+ ├── data
+ └── next
+
+ we can use Linked List with stack and Queue and The outcome
+ are depend on what ur using like if ur using stack for example :
+
+ Linkedlist.push("A");
+ Linkedlist.push("B");
+ Linkedlist.push("C");
+ Linkedlist.push("D");
+
+ System.out.println(Linkedlist);
+
+ output : [F, D, C, B, A] 
+
+ why ? because stack follow the rule LIFO last in first out
+ or LAST IN and It also first out  it should i have been out put 
+ like this :
+ output : [A, B, C , D, F] <- if we use stack alone 
+ and when we poll are delete the object 
+
+ like stack.poll();
+
+ output :[A,B,C,D] <- F disappear cuz it the last one 
+
+ but in linklist it goes as order so the output gnna be 
+ the one whos out first;
+
+ output : [F, D, C, B, A]
+
+ ok when we using poll or delete
+
+ Linkedlist.poll();
+  output : [D, C, B, A] <- it delete the first one that out
+  depend on what data structure your using.  
+
+
+and if we using Queue that following the FIFO 
+first come first serve like this :
+ Linkedlist.offer("A");
+    Linkedlist.offer("B");
+    Linkedlist.offer("C");
+    Linkedlist.offer("D");
+    Linkedlist.offer("F");
+
+it will follow the queue rule :
+
+output : [A, B, C, D, F] <- why cuz we insert A first so a come first
+
+when we using poll it will delete A first;
+
+
+# insert value to the Linkedlist
+
+we using add to insert value to Linkedlist .
+for example if we want to inster E to the list
+
+Code : Linkedlist.add(4<- the place u want ur data to insert to , "data")
+       Linkedlist.add(4."E");
+output : [A, B, C, D, E, F]<- why E insert behind F 
+becuz we using 4 we can count like this
+
+ 0  1  2  3  4   5
+[A, B, C, D ,  , F] <- F was on num 4 back than but we insert E ass number 4
+
+and to remove the data in Linkedlist 
+we can use :
+
+Linkedlist.remove("data"<- if it a string ) if it number we use double
+ 
+ or 
+char for letter
+int for number
+
+to know what data u on what number we can use index like this :
+
+System.out.println(Linkedlist.indexOf("F"));
+
+output : 4
+[A, B, C, D, F]
+
+or we can using peek method for chcking the first value 
+but it depend on what ds ur using like stack or queue
+example if u using stack;
+
+System.out.println(Linkedlist.peek());
+
+output : F
+[F, D, C, B, A] #lIFO
+
+and we can use peek method to peek the tail and the head also
+code:
+
+System.out.println(Linkedlist.peekingFirst()); it will give ur the first Object that about to go out first
+System.out.println(Linkedlist.peekingLast()) , it will peek the head of the linked list
+
+
+we can also use the first_last in adding value also 
+
+Linkedlist.addFirst("0"); <- it will add to the first of array 
+example 1 ,2 ,3 __________
+ater add to the first list
+
+0,1,2,3____________
+
+what about add to the last :
+
+Linkedlist.addLast("4"); 
+
+output : 0,1,2,3,4___________
+
+it add at the tail 
+
+also we have get like get guarantees
+
+System.out.println(Linkedlist.get(2));
+so it will count the linkedlist like
+
+0 , 1, 2, 3 __________etc
+
+what data value on the number 2 is what it will ne the output
+like if index 2 is C it will output C;
+
+advantage of Linkedlist :
+
+1.dynamic Data structure (allocates needd memory whike running)
+2.insertion and deletion of node is easy . 0(1)
+3.No/low memory wasted
+
+disadvantang : 
+
+1. greater memory usage (additional pointer)
+2. no random access of elements (no index[i])
+3.Acessing/ searching element is more time consuming. O(n)
+
+what we using Linkedlist for  
+
+1. implement Stack/ queues
+2.GPS navigation 
+3.Music Playlist; 
