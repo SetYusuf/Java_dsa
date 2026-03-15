@@ -489,4 +489,182 @@ DynamicArray.java → contains the class DynamicArray.
 Main.java → uses DynamicArray to do things in your program (like adding elements and printing them).
 
 
+    #NOTE NOTE  
+
+    every thing that change in DynamicArray.java file  
+    Will effect that way we use dynamic Array later 
+    in the folder 
+
+
+
+                         BIG O notation
+                     "How code slow as data grow"
+1. describes the performace of algorithms as the amount of data 
+increases 
+2. Machine independent (# of step to completion )
+3.ignore smaller operaion O(n + 1) -> O(n)
+
+example :                       n = amount of data that we added up  
+O(1) constant ttime                (its a variable like x)
+O(n) linear time
+O(log n) 
+O(n^2)
+O(n!)
+
+O(1) = constant time 
+      - random access of an element in an array
+      - inserting at the begining of LinkedList
+      - the fastest of the big O brothers
+
+O(Log n ) = Logarithimc time 
+           - binary search
+           - second fastest after constant time
+
+O(n) = Linear time 
+     - looping through elements in an array
+     - searching throught a Linkedlist
+     - third fastest of the big O bro
+
+O(n log n) = quasilinear time 
+     - quiksort
+     - mergesort
+     - heapsort 
+
+O(n^2) = quadratic time 
+     - insearttion sort
+     - selection sort 
+     - bubble sort
+
+O(n!) = factorial time 
+     - travaling Salesman Problem
+     - the slowest if the big O bros
+
+
+     1. Linear search
     
+// linear search = Ilterate through a collection
+        // one element at a time
+        // runtime complexity O(n)
+        // Disadvantages:
+        // slow for large data sets
+        // Advantages:
+        // fast for search of small to midium data sets
+        // does not need to sorted 
+        // useful for data structures that do not allow random access (linked list, etc)
+
+        *note 
+        for(int i = 0; i < array.length; i++){
+            if(array[i] == value){
+                return i;
+            }
+        }
+
+        return -1; 
+         what is all this line of code mean?
+
+         it important 
+         cuz it for looop 
+
+         for(int i = 0; i < array.length; i++)
+         
+         int i = 0 = it start from 0
+         i < array.length = untill i bigger than array.length
+         i++ = it mean it i will add 1 untill i bigger than array.length
+
+  int[] array = {1,2,3,4,5,6,7,8,9}; <- right here 
+
+        int index = linearSearch(array, 5);
+
+        if(index != -1){
+            System.out.println("element found at index: " + index);
+        } else {
+            System.out.println("element not found in the array");
+        }
+    
+    what all of this mean in the linearS.java?
+    why on this part it index not variable or var
+
+    int index = linearSearch(array, 5);
+
+    it becuz we use interger from the startd.
+
+    if(index != -1) ? what is that mean
+     
+     it mean if the index different than -1
+
+     system.out.print will print the result that
+     are different than -1 
+     System.out.println("element found at index: " + index);
+
+     or else which mean if it = -1 
+
+     System will print no element was found in array.
+        else {
+            System.out.println("element not found in the array");
+        }
+    
+we can search in linear search by writing like :
+
+int index = linearSearch(array, 1); 
+^
+| it change depend on what ur using if u using var
+
+it will be :
+
+var index = linearsearch(array, 1);
+
+--------------------------------------
+
+2. binary search 
+ 
+ Search algorithm that finds the position of a target
+ value within a sorted aray. half of the array is elemited
+ each "step" 
+
+let said we wanted to find value : "H"
+            so what the index : ?; of it
+            
+            the binary search work like this :
+
+  0    1    2    3    4    5    6    7    8    9   10 
+["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+
+What the binary search do in this suiation is start the search in the
+middle of the elememt so it start from it search both way
+if one way that does not have the value that we want to finds
+binary search will delete half of it :
+
+ ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+                            |
+                            V
+                  6    7    8    9   10
+                ["G", "H", "I", "J", "K"]
+
+becuz the middle value was F so half of the F under that it 
+does not have value H get deleted it continue like that untill
+it find the value we want to find;
+
+                ["G", "H", "I", "J", "K"]
+                            |
+                            V
+                          6   7
+                        ["G","H",]
+                            |
+                            V
+                            7
+                           [H];
+
+        lets goo we got an H , and it on index 7
+                     so : value : H
+                          index : 7
+    
+    so the binary search is working like that and the Big O notation
+    that it used is : 
+                   
+                    O(log n): becuz it work perfectly
+                    with big data set like 1millon or 
+                    billion index cuz it delete half 
+                    of the index that does not contains
+                    the value that we want to find 
+                    but it meh with small dataset.
+

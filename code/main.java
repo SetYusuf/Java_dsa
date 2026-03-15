@@ -1,3 +1,4 @@
+package code;
 public class main {
     public static void main(String[] args) {
         DynamicArray da = new DynamicArray(4); // initial capacity = 2
@@ -12,7 +13,7 @@ public class main {
 
 
         da.print();          // Output: 1 2 3 4
-        System.out.println(da.size());       // 4
-        System.out.println(da.capacity()); // 4 or 4->8 depending on growth
+        System.out.println("Size: " + da.size());       // 4
+        System.out.println("Capacity: " + da.capacity()); // 4 or 4->8 depending on growth
     }
 }

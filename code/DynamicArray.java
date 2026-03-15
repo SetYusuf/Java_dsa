@@ -1,4 +1,12 @@
-// Define a class called DynamicArray
+package code;
+// Define 
+// a class called DynamicArray
+// #NOTE NOTE  
+
+    // every thing that change in DynamicArray.java file  
+    // Will effect that way we use dynamic Array later 
+    // in the folder 
+    
 public class DynamicArray {
 
     // Internal array to store elements
