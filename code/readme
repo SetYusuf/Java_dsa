@@ -668,3 +668,305 @@ it find the value we want to find;
                     the value that we want to find 
                     but it meh with small dataset.
 
+// impletement binary search algorithm
+
+     public static int binarySearch(int[] array, int value) {
+
+        int low = 0;                     // start of array
+        int high = array.length - 1;     // end of array
+        int steps = 0;                   // count steps
+
+        while (low <= high) {
+            steps++;                     // increment step count
+            int middle = (low + high) / 2;   // find middle
+
+            System.out.println("Step " + steps + ": middle=" + middle + ", value=" + array[middle]);
+
+            if (array[middle] == value) {
+                System.out.println("Found after " + steps + " steps.");  // show steps taken
+                return middle;
+            }
+
+            if (array[middle] < value) {
+                low = middle + 1;        // search right half
+            } else {
+                high = middle - 1;       // search left half
+            }
+        }
+
+        System.out.println("Not found after " + steps + " steps.");
+        return -1;
+    }
+
+well in conclusion is a search algorithm that find the position 
+of a target value within a sorted array . half of the array is 
+elimited during each "step"
+
+
+         3. Interpolation search 
+
+improvment over binary search bestt used for "uniformly " distributed 
+"guesses" where a value might based on calculated prode 
+results if prode is incorrect, search area is narrowed 
+, and new probe is calculated 
+
+average case : O(log(log (n))) 
+worst case : O(n) [value increases exponentially ]
+
+Interpolation Search
+Search algorithm that finds the position of a target value within a sorted array.
+Instead of always checking the middle (like binary search), it estimates where the value should be based on the numbers.
+It "guesses" the position using a calculated probe.
+If the guess is wrong, the search range becomes smaller and a new probe is calculated.
+
+Interpolation Search
+
+Average case : O(log(log n))
+Worst case : O(n) (when numbers increase unevenly)
+
+Let’s say we want to find the value **13**
+
+What is the index : ?
+
+Array
+
+```
+ 0  1  2  3  4  5  6  7  8
+[1, 3, 5, 7, 9,11,13,15,17]
+```
+
+How interpolation search works
+
+Instead of checking the middle, it estimates where the value should be based on the numbers in the array.
+
+Because **13 is close to the higher numbers**, the algorithm predicts that the index will be near the end of the array.
+
+```
+ 0  1  2  3  4  5  6  7  8
+[1, 3, 5, 7, 9,11,13,15,17]
+                   |
+                   V
+                   6
+```
+
+The algorithm predicts **index ≈ 6**
+
+Now it checks
+
+```
+array[6] = 13
+```
+
+Value Found
+
+```
+array[6] = 13
+```
+
+So
+
+```
+value : 13
+index : 6
+```
+
+Search finished in one step.
+
+If the guess was wrong
+
+Example searching for **15**
+
+```
+ 0  1  2  3  4  5  6  7  8
+[1, 3, 5, 7, 9,11,13,15,17]
+                   |
+                   V
+                   6
+
+Probe = 6
+
+array[6] = 13
+
+Since **13 < 15**, the search moves to the right side.
+
+ 7  8
+[15,17]
+  |
+  V
+  7
+
+
+Now
+
+array[7] = 15
+
+Value Found
+----------------
+value : 15
+index : 7
+-----------------
+Key Idea
+
+Binary Search always checks the middle of the array.
+
+Interpolation Search tries to guess where the value should be based on the values in the array.
+Binary search uses
+middle = (low + high) / 2
+
+Interpolation search uses a **probe formula** to estimate the position.
+
+Simple comparison
+
+Binary search cuts the array in half every step.
+
+Interpolation search jumps closer to where the value should be.
+
+Final idea
+
+If the numbers in the array are evenly distributed, interpolation search can find the value extremely fast, sometimes in only **one or two steps**.
+
+                         V.bubble sort \\
+bubble sort a pair of adjacent elements are compare, and the Elements
+swapped if they not in order. 
+
+it used Quandratic time O(n^2)
+small data set = okay-ish 
+large data set = bad 
+
+bubble sort rule :
+
+the array must start from light to heavy 
+
+ok the buble sort work like this : 
+
+example u have an array : 
+
+light                    heavy
+
+[9, 3, 2, 1, 4, 5, 7, 8, 6 ] <- this is ur array 
+
+int temp []
+                  bubble sort activated 
+
+ light [3,  , 2, 1, 4, 5, 7, 8, 6 ] heavy 
+
+ int temp [9] <- it store the value in the temp int than put bback
+                than after this 
+
+[3, 9 , 2, 1, 4, 5, 7, 8, 6 ]
+
+int temp []; 
+
+it will continue store the data tha push the smaller value to 
+the front than put the store value back to place than it continue
+the cycle till the array look like this. 
+
+
+    light -> [1, 2, 3, 4, 5, 6, 7, 8, 9 ]  <- heavy
+
+    til the array value started from the smallest 
+    number ;
+
+
+
+                    VI. selection sort 
+
+selection sort = search through an array and keep track of minimum 
+value during iteration. at the end iteration, we swap variable. 
+
+it use Quandratic time O(n^2)
+small data set = okay 
+large data set = bad 
+
+ok how the selection sort work ?
+
+it the same as bubble sort but this is have int min and int temp .
+
+light [9, 1, 2, 3, 4, 5, 7, 8, 6 ] heavy 
+
+    int min []         int temp [] 
+
+att first it scan for smallest nummber so :
+
+light [9, 1, 2, 3, 4, 5, 7, 8, 6 ] heavy 
+
+    int min [9]         int temp [] # at start 9 was the smallest c
+                                      cuz it the first one .
+   than : 
+             | ouh oh the next number is smaller than 9 it 1 so
+             V it store the number 1 in int min  and than push 9 to int temp
+   light [9, 1, 2, 3, 4, 5, 7, 8, 6 ] heavy 
+
+    int min [1]         int temp [9]    
+
+    than it swap the position swap the int min to the array so: 
+
+    
+    light [ 1, , 2, 3, 4, 5, 7, 8, 6 ] heavy 
+
+    int min []         int temp [9]   than it put 9 back after 1 
+                |
+                V
+
+
+    light [1, 9, 2, 3, 4, 5, 7, 8, 6 ] heavy 
+
+    int min []         int temp []  
+
+
+    the cycle contiune like this till the array value
+    start from the light to heavy 
+
+    light [1, 2, 3, 4, 5, 6, 7, 8, 9 ] heavy  : like this and the selection sort complete;
+
+    int min []         int temp []                           
+
+                  VII. Insertion sort 
+insertion sort = after comparing element to the left shift 
+            elememtt to the right to make room to insert a value
+
+        use Quandratic time O(n^2)
+        small data set = decent 
+        large data set = bad 
+
+        less steps than bubble sort
+        Best case is O(n) compare to selection sort O(n^2)
+
+   ok how did insertion sort work : 
+   it start the same as other sort 
+
+light                    heavy
+    |
+    V
+[9, 3, 2, 1, 4, 5, 7, 8, 6 ] <- this is ur array 
+
+int temp []; ok but this time it alway start with the index 1  
+                                                     
+light                    heavy
+
+[9,  , 2, 1, 4, 5, 7, 8, 6 ] <- this is ur array 
+
+int temp [3] ; than it compare to left value if the left 
+               value was bigger it push the left value to
+               the righ than it insert the value in int temp
+               to the place that the value have been push;
+so : 
+
+light                    heavy
+
+[ , 9, 2, 1, 4, 5, 7, 8, 6 ] <- this is ur array 
+
+int temp [3] than i put 3 back to index 0;
+
+light                    heavy
+
+[3, 9, 2, 1, 4, 5, 7, 8, 6 ] <- this is ur array 
+
+int temp []; it will continue like this untill the array follow 
+             the rule like any other sort Light to heavy. 
+
+light                    heavy
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9 ] <- this is ur array 
+
+int temp [] ; BBOOOOOM ur got ur sort done !!!!! ;

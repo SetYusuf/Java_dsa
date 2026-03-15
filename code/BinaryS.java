@@ -20,6 +20,7 @@ public class BinaryS {
             System.out.println("Element found at index: " + index);
         }
     }
+    
             // impletement binary search algorithm
 
      public static int binarySearch(int[] array, int value) {
